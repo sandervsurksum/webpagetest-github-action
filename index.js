@@ -28,11 +28,6 @@ const runTest = (wpt, url, options) => {
 
   // First visit to put page in vercel cache 
   let script = wpt.scriptToString([
-      { logData: '0' },
-      { setHeader: `x-vercel-protection-bypass: ${VERCEL_API_KEY}`},
-      { navigate: url },
-      "clearCache",
-      { logData: '1' },
       { setHeader: `x-vercel-protection-bypass: ${VERCEL_API_KEY}`},
       { navigate: url },
       "waitForComplete",

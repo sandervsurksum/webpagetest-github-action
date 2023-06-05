@@ -31,6 +31,7 @@ const runTest = (wpt, url, options) => {
       { logData: '0' },
       { setHeader: `x-vercel-protection-bypass: ${VERCEL_API_KEY}`},
       { navigate: url },
+      "exec document.open()",
       "clearCache",
       { logData: '1' },    
       { setHeader: `x-vercel-protection-bypass: ${VERCEL_API_KEY}`},
